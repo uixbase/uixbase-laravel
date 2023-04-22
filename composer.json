@@ -1,13 +1,12 @@
 {
-    "name": "sophat/elements",
+    "name": "uixbase/uixbase-laravel",
     "version": "0.0.1-beta",
-    "description": "Sophat/Elements components is Build for SmartERP, and SmartPOS Components",
+    "description": "UIXBase/UIXBase-Laravel components is Build for SmartERP, and SmartPOS Components",
     "license": "MIT",
     "homepage": "https://github.com/iMSophat/elements",
     "type": "library",
     "keywords": [
-        "sophat",
-        "turbotech-components"
+        "sophat"
     ],
     "authors": [
         {
@@ -20,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sophat\\Elements\\ElementsServicesProvider"
+                "UIXBase\\UIXBaseLaravel\\ComponentsServicesProvider"
             ]
         }
     },
@@ -31,8 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sophat\\Elements\\":"src",
-            "Sophat\\Elements\\Test\\":"tests"
+            "UIXBase\\UIXBaseLaravel\\":"src"
         }
     },
     "autoload-dev": {
