@@ -12,13 +12,14 @@ We develop this package base on `Laravel/framework` and `TailwindCss` for stylin
 ## Installation
 ### Requirements
 ```bash
-composer require UIXBase/Laravel
+composer require uixbase/uixbase-laravel
 ```
 ## Usage
 
 ##  Components
 -   [`Avatar`](doc/avatars/)
     -   [`Default`](doc/avatars/avatar#x-avatar): <small>`(New)`</small>
+    -   [`Group Avatar`](doc/avatars/avatar#group-avatar-x-groupavatar): <small>`(New)`</small>
 ##   Contributors
 
 - [PPhat](https://github.com/pphatDev) 
@@ -27,13 +28,13 @@ composer require UIXBase/Laravel
 ##   Community
 ###   Issues
 
-- [All Issues](https://github.com/iMSophat/elements/issues) 🚧
-- [Create New Issues](https://github.com/iMSophat/elements/issues/new) 🚧
+- [All Issues](https://github.com/uixbase/uixbase-laravel/issues) 🚧
+- [Create New Issues](https://github.com/uixbase/uixbase-laravel/issues/new) 🚧
 
 ###   Discussions
 
-- [Discussions](https://github.com/orgs/iMSophat/discussions) 📣🔔
-- [Start a new discussion](https://github.com/orgs/iMSophat/discussions/new?category=q-a) 📣🔔
+- [Discussions](https://github.com/orgs/uixbase/uixbase-laravel/discussions) 📣🔔
+- [Start a new discussion](https://github.com/orgs/uixbase/uixbase-laravel/discussions/new?category=q-a) 📣🔔
 
 
 
