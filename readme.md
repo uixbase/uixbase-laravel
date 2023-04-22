@@ -18,7 +18,7 @@ composer require uixbase/uixbase-laravel
 
 ##  Components
 -   [`Avatar`](doc/avatars/)
-    -   [`Default`](doc/avatars/avatar#x-avatar): <small>`(New)`</small>
+    -   [`Default`](doc/avatars/avatar#default-avatar-x-avatar): <small>`(New)`</small>
     -   [`Group Avatar`](doc/avatars/avatar#group-avatar-x-groupavatar): <small>`(New)`</small>
 ##   Contributors
 
