@@ -22,9 +22,8 @@ composer require uixbase/uixbase-laravel
     -   [`Group Avatar`](doc/avatars/avatar.md#group-avatar-x-groupavatar): <small>`(New)`</small>
 ##   Contributors
 
-- [PPhat](https://github.com/pphatDev) 
-
-    <!-- Thank you for considering contributing to `Sophat/Elements`! You can read the contribution guide [here](CONTRIBUTING.md). -->
+- [🚧 PPhat](https://github.com/pphatDev) 
+- [🚧 Hoeun Pichet](https://github.com/HoeunPichet) 
 ##   Community
 ###   Issues
 
