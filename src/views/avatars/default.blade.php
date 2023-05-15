@@ -45,7 +45,7 @@
     'color'         => 'bg-gray-300',
     'textColor'     => 'text-gray-900',
     'borderColor'   => 'ring-gray-900',
-    'bordered'      => 'ring',
+    'bordered'      => '',
 ])
 
 @php

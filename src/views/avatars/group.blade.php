@@ -33,6 +33,8 @@
     'avatars'   => [],
     "limit"     => "3",
     "spaceX"    => "-space-x-6",
+    'rounded'   => 'squared',
+    'bordered'  => 'ring',
 ])
 
 @php
@@ -45,30 +47,67 @@
 <div class="flex {{ $spaceX }} items-center">
     @if ($avatars != [])
         @foreach ($avatars as $key => $avatar)
-            <x-avatar 
-                type="{{ $avatar['type'] }}"
-                text="{{ $avatar['text'] }}"
-                src="{{ $avatar['src'] }}"
-                size="{{ $avatar['size'] }}"
-                color="{{ $avatar['color'] }}"
-                textColor="{{ $avatar['textColor'] }}"
-                border="{{ $avatar['border'] }}"
-                borderColor="{{ $avatar['borderColor'] }}">
-                @if ($key == $lim) @break @endif
-                {{ $key }}
-        </x-avatar>
+            @php
+
+                $rounded = null;
+                switch ($avatar['type']) {
+                    case 'squared':
+                        $rounded = "rounded-xl";
+                        break;
+
+                    case 'circle':
+                        $rounded = "rounded-full";
+                        break;
+                }
+
+                $textColors = null;
+                if ($avatar['textColor'] == "") {
+                    $textColors = "text-gray-900";
+                }
+
+                $borderColors = null;
+                if ($avatar['borderColor'] == "") {
+                    $borderColors = "text-gray-900";
+                }
+
+            @endphp
+
+            <div {{ 
+                    $attributes->merge([
+                        'class' => 'overflow-hidden '.$rounded.' '.$avatar['size'].' '.$avatar['color'].' '.$textColors.' '.$borderColors.' '.$bordered
+                    ]) 
+                }}>
+
+                @isset($avatar['src'])
+                    <img {{ 
+                            $attributes->merge([
+                                "class" => $avatar['size'].' object-cover'
+                            ]) 
+                        }}
+                        src="{{ $avatar['src'] }}" 
+                        alt="{{ $avatar['text'] }} profile avartar">
+                @else
+                    <h1 {{ 
+                            $attributes->merge([
+                                "class" => 'flex pb-1 items-center text-sm font-medium justify-center  '.$avatar['color'].$textColors
+                            ]) 
+                        }}
+                        title="{{ $avatar['text'] }}"> {{ substr($avatar['text'], 0, 3) }} 
+                    </h1>
+                @endisset
+            </div>
         @endforeach
 
-        @if (count($avatars) > $lim)
+        {{-- @if (count($avatars['avatars']) > $lim)
             <x-avatar 
                 type="{{ $avatars[0]['type'] }}"
                 text="{{ count($avatars)-$lim }}+"
                 size="{{ $avatars[0]['size'] }}"
                 color="{{ $avatars[0]['color'] }}"
                 textColor="{{ $avatars[0]['textColor'] }}"
-                border="{{ $avatars[0]['border'] }}"
+                bordered="{{ $avatars[0]['bordered'] }}"
                 borderColor="{{ $avatars[0]['borderColor'] }}">
             </x-avatar>
-        @endif
+        @endif --}}
     @endif
 </div>

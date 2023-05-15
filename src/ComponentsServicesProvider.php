@@ -25,10 +25,14 @@ class ComponentsServicesProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/views/avatars', 'avatars');
+        $this->loadViewsFrom(__DIR__.'/views/buttons', 'buttons');
 
         /* Elements */ 
         Blade::component('avatars::default', 'avatar');
         Blade::component('avatars::group', 'group:avatar');
+
+        Blade::component('buttons::button-gradient', 'button:gradient');
+        Blade::component('buttons::button', 'button');
         
     }
 
