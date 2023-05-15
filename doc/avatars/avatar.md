@@ -41,7 +41,7 @@ You can change the full style to a bordered `Avatar` with the `bordered` propert
 <x-avatar 
     text="Leat Sophat"
     src="https://avatars.githubusercontent.com/u/65520537?v=4"
-    border="ring-2"
+    bordered="ring-2"
     borderColor="ring-red-500">
 </x-avatar>
 ```
@@ -59,7 +59,7 @@ $data = [
         "size"          =>  "h-14 w-14",
         "color"         =>  "bg-slate-500",
         "textColor"     =>  "text-white",
-        "border"        =>  "ring-2",
+        "bordered"        =>  "ring-2",
         "borderColor"   =>  "ring-red-500"
     ],
     [
@@ -69,7 +69,7 @@ $data = [
         "size"          =>  "h-14 w-14",
         "color"         =>  "bg-slate-500",
         "textColor"     =>  "text-white",
-        "border"        =>  "ring-2",
+        "bordered"        =>  "ring-2",
         "borderColor"   =>  "ring-red-500"
     ],
 ]

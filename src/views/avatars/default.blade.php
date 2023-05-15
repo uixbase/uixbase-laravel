@@ -39,60 +39,64 @@
 
 @props([
     'type'          => 'squared',
-    'text'          => 'sfsf',
-    'src'           => '',
+    'text'          => '',
+    'src'           => '#',
     'size'          => 'h-10 w-10',
-    'color'         => 'bg-gray-300',
-    'textColor'     => 'text-gray-900',
-    'borderColor'   => 'ring-gray-900',
+    'color'         => 'bg-gray-100',
+    'textColor'     => 'text-gray-700',
+    'borderColor'   => '',
     'bordered'      => '',
 ])
 
 @php
-    $rounded = null;
+    $rounded    = null;
     switch ($type) {
         case 'squared':
             $rounded = "rounded-xl";
             break;
-
         case 'circle':
             $rounded = "rounded-full";
             break;
     }
-    $sizing = null;
-    if ($size == "") {
-        $sizing = 'h-10 w-10';
-    }
 
-    $colors = null;
-    if ($color == "") {
-        $colors = "bg-gray-300";
-    }
+    $widthHeight    = "h-10 w-10";
+    $size == "" ? $widthHeight : $size;
 
-    $textColors = null;
-    if ($textColor == "") {
-        $textColors = "text-gray-900";
-    }
+    $background = "bg-gray-100";
+    $color == "" ? $background : $color;
 
-    $borderColors = null;
-    if ($borderColor == "") {
-        $borderColors = "text-gray-900";
-    }
+    $textColors = "text-gray-900";
+    $textColor == "" ? $textColors : $textColor;
+    
+    $ring   = "";
+    $bordered == "" ? $ring : $bordered;
+
+    $ringColor      = "";
+    $borderColor == "" ? $ringColor : $borderColor;
+
+    $link   = "#";
+    $src == "" ? $link : $src;
 @endphp
 
-
 <div 
-    class="overflow-hidden  {{ $rounded }}  {{ $size }}  {{ $sizing }}  {{ $bordered }} {{ $borderColors }} {{ $borderColor }} m-1.5">
-    @if (!$src == "")
-        <img 
-            class="{{ $size }} {{ $sizing }} object-cover" 
-            src="{{ $src }}"
-            alt="{{ $text }} profile avartar">
+    {{ 
+        $attributes->merge([
+            'class' => 'overflow-hidden m-1.5 '.$rounded.' '.$size.' '.$color.' '.$textColor.' '.$bordered.' '.$borderColor
+        ]) 
+    }}>
+    @if ($src != "#")
+        <img {{ $attributes->merge([
+            'class' => 'object-cover '.$size,
+            'src' => $src,
+            'alt' => $text.' profile avartar',
+        ]) }}/>
     @else
-        <h1 
-            class="flex pb-1 items-center text-sm font-medium justify-center  {{ $size }}  {{ $sizing }}  {{ $color }}  {{ $colors }}  {{ $textColor }}  {{ $textColors }}"
-            title="{{ $text }}"> 
-                {{ substr($text, 0, 3) }} 
+        <h1 {{ $attributes->merge([
+                'class' => 'flex pb-1 items-center text-sm font-medium justify-center '.$size.' '.$color.' '.$textColor,
+                'title' => $text.' profile avartar',
+            ]) 
+        }}> 
+            {{ substr($text, 0, 3) }} 
         </h1>
     @endif
 </div>
