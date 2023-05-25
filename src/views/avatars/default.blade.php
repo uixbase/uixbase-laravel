@@ -84,7 +84,7 @@
             'class' => 'overflow-hidden m-1.5 '.$rounded.' '.$size.' '.$color.' '.$textColor.' '.$bordered.' '.$borderColor
         ]) 
     }}>
-    @if ($src != "#")
+    @if ($src != "#" && $src != "")
         <img {{ $attributes->merge([
             'class' => 'object-cover '.$size,
             'src' => $src,
